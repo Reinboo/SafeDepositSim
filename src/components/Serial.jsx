@@ -12,7 +12,7 @@ const Serial = ({ serialNumber }) => (
 );
 
 Serial.propTypes = {
-  serialNumber: PropTypes.number.isRequired,
+  serialNumber: PropTypes.string.isRequired,
 };
 
 const Wrapper = styled.div`
