@@ -1,18 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Main from './Main';
 
 import messages from '../../screenMessages';
 
-const Screen = () => {
+const Screen = ({ keyword }) => {
   const status = messages.top.unlocked;
   return (
     <Wrapper>
       {status}
-      <Main message={messages.main.ready} />
+      <Main message={keyword} />
     </Wrapper>
   );
+};
+
+Screen.propTypes = {
+  keyword: PropTypes.string.isRequired,
 };
 
 const Wrapper = styled.div`

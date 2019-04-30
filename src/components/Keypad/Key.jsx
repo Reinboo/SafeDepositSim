@@ -2,17 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Key = ({ keyFace }) => (
-  <Wrapper>
+const Key = ({ keyFace, handleClick }) => (
+  <Wrapper type="button" id={keyFace} onClick={handleClick}>
     {keyFace}
   </Wrapper>
 );
 
 Key.propTypes = {
   keyFace: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.button`
   width: 4rem; height: 4rem;
   margin: .5rem;
   border: 1px solid rgba(0, 0, 0, .5);

@@ -5,15 +5,26 @@ import Screen from './Screen/index';
 import Serial from './Serial';
 import Keypad from './Keypad/index';
 
-const App = () => (
-  <Wrapper>
-    <Panel>
-      <Screen> test </Screen>
-      <Keypad />
-      <Serial serialNumber="12345" />
-    </Panel>
-  </Wrapper>
-);
+const App = () => {
+  const [keyword, setKeyword] = React.useState('');
+
+  const handleKeywordUpdate = (event) => {
+    if (keyword.length < 6) {
+      const keyFace = event.target.id;
+      setKeyword(keyword + keyFace);
+    }
+  };
+
+  return (
+    <Wrapper>
+      <Panel>
+        <Screen keyword={keyword} />
+        <Keypad handleUpdate={handleKeywordUpdate} />
+        <Serial serialNumber="12345" />
+      </Panel>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   width: 100vw; height: 100vh;
