@@ -1,0 +1,44 @@
+{
+  "name": "safedepositsim",
+  "version": "1.0.0",
+  "description": "Hotel safe deposit simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reinboo/SafeDepositSim.git"
+  },
+  "author": "Nivalis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Reinboo/SafeDepositSim/issues"
+  },
+  "homepage": "https://github.com/Reinboo/SafeDepositSim#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "react-hot-loader": "^4.8.4",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
