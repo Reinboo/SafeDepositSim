@@ -1,10 +1,42 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const App = () => {
-  const test = 'test';
-  return (
-    <div>{test}</div>
-  );
-};
+import Screen from './Screen/index';
+import Serial from './Serial';
+import Keypad from './Keypad/index';
+
+const App = () => (
+  <Wrapper>
+    <Panel>
+      <Screen> test </Screen>
+      <Keypad />
+      <Serial serialNumber="12345" />
+    </Panel>
+  </Wrapper>
+);
+
+const Wrapper = styled.div`
+  width: 100vw; height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: ${props => props.theme.bgColor};
+  font-family: ${props => props.theme.fontNormal};
+`;
+
+const Panel = styled.div`
+  width: 20rem; height: 31rem;
+  max-width: 80vw;
+  max-height: 90vh;
+  padding: 1.5rem 2.5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  
+  position: relative;
+  
+  background-color: ${props => props.theme.panelBodyColor};
+`;
 
 export default App;
