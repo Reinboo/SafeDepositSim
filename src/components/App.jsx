@@ -34,6 +34,7 @@ export default class App extends React.Component {
     this.setState({
       backlightStatus: 'on',
     });
+    window.setTimeout(() => this.setState({ backlightStatus: 'off' }), 5000);
   }
 
   render() {
