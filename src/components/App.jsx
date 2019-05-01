@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Screen from './Screen/index';
 import Serial from './Serial';
 import Keypad from './Keypad/index';
+import setTimeout from '../timeout';
 
 import messages from '../screenMessages';
 
@@ -15,13 +16,19 @@ export default class App extends React.Component {
       actionStatus: '',
       inputPasscode: '',
       backlightStatus: 'off',
+      validate: setTimeout(() => console.log('validating'), 1200),
+      idle: setTimeout(() => this.setState({ backlightStatus: 'off' }), 5000),
     };
 
     this.handleKeywordUpdate = this.handleKeywordUpdate.bind(this);
   }
 
   handleKeywordUpdate(event) {
-    const { inputPasscode } = this.state;
+    const {
+      inputPasscode,
+      idle,
+      validate,
+    } = this.state;
 
     if (inputPasscode.length < 6) {
       const keyFace = event.target.id;
@@ -31,10 +38,12 @@ export default class App extends React.Component {
       }));
     }
 
+    validate.refresh();
+    idle.refresh();
+
     this.setState({
       backlightStatus: 'on',
     });
-    window.setTimeout(() => this.setState({ backlightStatus: 'off' }), 5000);
   }
 
   render() {
