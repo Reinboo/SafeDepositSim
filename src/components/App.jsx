@@ -16,8 +16,8 @@ export default class App extends React.Component {
       actionStatus: '',
       inputPasscode: '',
       backlightStatus: 'off',
-      validate: setTimeout(() => console.log('validating'), 1200),
-      idle: setTimeout(() => this.setState({ backlightStatus: 'off' }), 5000),
+      validateTimeout: setTimeout(() => console.log('validating'), 1200),
+      idleTimeout: setTimeout(() => this.setState({ backlightStatus: 'off' }), 5000),
     };
 
     this.handleKeywordUpdate = this.handleKeywordUpdate.bind(this);
@@ -26,8 +26,8 @@ export default class App extends React.Component {
   handleKeywordUpdate(event) {
     const {
       inputPasscode,
-      idle,
-      validate,
+      idleTimeout,
+      validateTimeout,
     } = this.state;
 
     if (inputPasscode.length < 6) {
@@ -38,8 +38,8 @@ export default class App extends React.Component {
       }));
     }
 
-    validate.refresh();
-    idle.refresh();
+    validateTimeout.refresh();
+    idleTimeout.refresh();
 
     this.setState({
       backlightStatus: 'on',
