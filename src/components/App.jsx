@@ -26,9 +26,9 @@ export default class App extends React.Component {
     if (inputPasscode.length < 6) {
       const keyFace = event.target.id;
 
-      this.setState({
-        inputPasscode: inputPasscode + keyFace,
-      });
+      this.setState(prevState => ({
+        inputPasscode: prevState.inputPasscode + keyFace,
+      }));
     }
 
     this.setState({
