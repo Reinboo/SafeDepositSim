@@ -5,26 +5,62 @@ import Screen from './Screen/index';
 import Serial from './Serial';
 import Keypad from './Keypad/index';
 
-const App = () => {
-  const [keyword, setKeyword] = React.useState('');
+import messages from '../screenMessages';
 
-  const handleKeywordUpdate = (event) => {
-    if (keyword.length < 6) {
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      doorStatus: messages.top.unlocked,
+      actionStatus: '',
+      inputPasscode: '',
+      backlightStatus: 'off',
+    };
+
+    this.handleKeywordUpdate = this.handleKeywordUpdate.bind(this);
+  }
+
+  handleKeywordUpdate(event) {
+    const { inputPasscode } = this.state;
+
+    if (inputPasscode.length < 6) {
       const keyFace = event.target.id;
-      setKeyword(keyword + keyFace);
-    }
-  };
 
-  return (
-    <Wrapper>
-      <Panel>
-        <Screen keyword={keyword} />
-        <Keypad handleUpdate={handleKeywordUpdate} />
-        <Serial serialNumber="12345" />
-      </Panel>
-    </Wrapper>
-  );
-};
+      this.setState({
+        inputPasscode: inputPasscode + keyFace,
+      });
+    }
+
+    this.setState({
+      backlightStatus: 'on',
+    });
+  }
+
+  render() {
+    const {
+      doorStatus,
+      actionStatus,
+      inputPasscode,
+      backlightStatus,
+    } = this.state;
+
+    const screenMessage = actionStatus || inputPasscode;
+
+    return (
+      <Wrapper>
+        <Panel>
+          <Screen
+            screenMessage={screenMessage}
+            doorStatus={doorStatus}
+            backlightStatus={backlightStatus}
+          />
+          <Keypad handleUpdate={this.handleKeywordUpdate} />
+          <Serial serialNumber="12345" />
+        </Panel>
+      </Wrapper>
+    );
+  }
+}
 
 const Wrapper = styled.div`
   width: 100vw; height: 100vh;
@@ -49,5 +85,3 @@ const Panel = styled.div`
   
   background-color: ${props => props.theme.panelBodyColor};
 `;
-
-export default App;

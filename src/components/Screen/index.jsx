@@ -4,20 +4,17 @@ import styled from 'styled-components';
 
 import Main from './Main';
 
-import messages from '../../screenMessages';
-
-const Screen = ({ keyword }) => {
-  const status = messages.top.unlocked;
-  return (
-    <Wrapper>
-      {status}
-      <Main message={keyword} />
-    </Wrapper>
-  );
-};
+const Screen = ({ screenMessage, doorStatus, backlightStatus }) => (
+  <Wrapper className={backlightStatus}>
+    {doorStatus}
+    <Main message={screenMessage} />
+  </Wrapper>
+);
 
 Screen.propTypes = {
-  keyword: PropTypes.string.isRequired,
+  screenMessage: PropTypes.string.isRequired,
+  doorStatus: PropTypes.string.isRequired,
+  backlightStatus: PropTypes.string.isRequired,
 };
 
 const Wrapper = styled.div`
@@ -33,7 +30,11 @@ const Wrapper = styled.div`
   
   background-color: ${props => props.theme.screenBacklightOffColor};  
   
+  transition: background-color .2s linear,
+              box-shadow .2s linear;
+  
   &.on {
+    background-color: ${props => props.theme.screenBacklightOnColor};  
     box-shadow: 0 0 10px 1px ${props => props.theme.screenBacklightOnColor};
   }
 `;
