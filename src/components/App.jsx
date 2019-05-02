@@ -49,7 +49,7 @@ export default class App extends React.Component {
       'https://9w4qucosgf.execute-api.eu-central-1.amazonaws.com/default/CR-JS_team_M02a',
       { params: { code: masterPassword } },
     ).then((response) => {
-      const serialNumber = response.data.sn;
+      const serialNumber = response.data.sn.toString();
       this.setState({ serialNumber });
     });
   }
