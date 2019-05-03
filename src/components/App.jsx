@@ -22,8 +22,10 @@ export default class App extends React.Component {
       actionStatus: messages.main.ready,
       backlightStatus: 'off',
       doorStatus: messages.top.unlocked,
+
       inputPasscode: '',
       passcode: '',
+
       processInputTimeout: setTimeout(this.processInput, 1200),
       idleTimeout: setTimeout(
         () => this.setState({
@@ -61,23 +63,23 @@ export default class App extends React.Component {
       validateUrl,
     } = service;
 
+    // Contact server to validate master password if in service mode
     if (actionStatus === messages.main.service) {
       this.setState({ actionStatus: messages.main.validating, inputPasscode: '' });
+
       await axios.get(
         validateUrl,
         { params: { code: inputPasscode } },
       ).then((response) => {
         const respSerialNumber = response.data.sn.toString();
+
         if (serialNumber === respSerialNumber) {
           this.unlock();
         } else {
           this.error();
         }
       });
-      return;
-    }
-
-    if (doorStatus === messages.top.locked) {
+    } else if (doorStatus === messages.top.locked) {
       if (inputPasscode.length === 6) {
         if (inputPasscode === passcode) {
           this.unlock();
