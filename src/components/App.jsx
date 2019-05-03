@@ -38,7 +38,7 @@ export default class App extends React.Component {
   componentDidMount() {
     // Generate random super secret master password :)
     const keys = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '*', '0', 'L'];
-    const masterPassword = 'XXXXXXXX'.replace(/[X]/g, () => (
+    const masterPassword = 'XXXXXX'.replace(/[X]/g, () => (
       // Replaces 'X' in the given string, with a random element from keys array
       keys[Math.floor(Math.random() * 12)]
     ));
@@ -86,12 +86,39 @@ export default class App extends React.Component {
     }
   }
 
-  processInput() {
+  async processInput() {
     const {
       inputPasscode,
       passcode,
       doorStatus,
+      actionStatus,
+      serialNumber,
     } = this.state;
+
+    if (actionStatus === messages.main.service) {
+      this.setState({ actionStatus: messages.main.validating, inputPasscode: '' });
+      await axios.get(
+        'https://9w4qucosgf.execute-api.eu-central-1.amazonaws.com/default/CR-JS_team_M02a',
+        { params: { code: inputPasscode } },
+      ).then((response) => {
+        const respSerialNumber = response.data.sn.toString();
+        if (serialNumber === respSerialNumber) {
+          this.setState({
+            inputPasscode: '',
+            passcode: '',
+            actionStatus: messages.main.unlocking,
+          });
+          setTimeout(
+            () => this.setState({
+              doorStatus: messages.top.unlocked,
+              actionStatus: messages.main.ready,
+            }),
+            3000, // Simulate mechanical unlocking process
+          ).refresh();
+        }
+      });
+      return;
+    }
 
     if (doorStatus === messages.top.locked) {
       if (inputPasscode.length === 6) {
@@ -111,6 +138,7 @@ export default class App extends React.Component {
         } else if (inputPasscode === '000000') { // Access Service Mode
           this.setState({
             actionStatus: messages.main.service,
+            inputPasscode: '',
           });
         } else { // Wrong passcode
           this.setState({
