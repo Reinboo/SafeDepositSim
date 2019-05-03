@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   position: absolute;
   bottom: .5rem; right: .5rem;
   text-align: right;
-  font: 2rem ${props => props.theme.fontMedium};
+  font: 1.5rem ${props => props.theme.fontMedium};
 `;
 
 export default Main;
