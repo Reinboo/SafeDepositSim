@@ -13,6 +13,8 @@ Main.propTypes = {
 };
 
 const Wrapper = styled.div`
+  position: absolute;
+  bottom: .5rem; right: .5rem;
   text-align: right;
   font: 2rem ${props => props.theme.fontMedium};
 `;

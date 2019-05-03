@@ -18,6 +18,7 @@ Screen.propTypes = {
 };
 
 const Wrapper = styled.div`
+  position: relative;
   height: 7rem;
   padding: .5rem;
   border: 1px solid rgba(0, 0, 0, .35);
@@ -27,6 +28,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
   
   background-color: ${props => props.theme.screenBacklightOffColor};  
   

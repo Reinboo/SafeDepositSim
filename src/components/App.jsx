@@ -152,9 +152,12 @@ export default class App extends React.Component {
       inputPasscode,
       idleTimeout,
       processInputTimeout,
+      actionStatus,
     } = this.state;
 
-    if (inputPasscode.length < 6) {
+    // Limit password to 6 digits if service mode is not enabled,
+    // otherwise it's unlimited (master password is of unknown length)
+    if (actionStatus === messages.main.service || inputPasscode.length < 6) {
       const keyFace = event.target.id;
 
       this.setState(prevState => ({
