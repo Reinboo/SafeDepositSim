@@ -22,7 +22,6 @@ export default class App extends React.Component {
       actionStatus: messages.main.ready,
       inputPasscode: '',
       passcode: '',
-      serialNumber: 'XXXXXXXXXX',
       backlightStatus: 'off',
       processInputTimeout: setTimeout(this.processInput, 1200),
       idleTimeout: setTimeout(
@@ -33,25 +32,6 @@ export default class App extends React.Component {
         5000,
       ),
     };
-  }
-
-  componentDidMount() {
-    // Generate random super secret master password :)
-    const keys = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '*', '0', 'L'];
-    const masterPassword = 'XXXXXX'.replace(/[X]/g, () => (
-      // Replaces 'X' in the given string, with a random element from keys array
-      keys[Math.floor(Math.random() * 12)]
-    ));
-    console.log(masterPassword);
-
-    // Get serial number from the server
-    axios.get(
-      'https://9w4qucosgf.execute-api.eu-central-1.amazonaws.com/default/CR-JS_team_M02a',
-      { params: { code: masterPassword } },
-    ).then((response) => {
-      const serialNumber = response.data.sn.toString();
-      this.setState({ serialNumber });
-    });
   }
 
   setPasscode() {
@@ -196,7 +176,6 @@ export default class App extends React.Component {
       actionStatus,
       inputPasscode,
       backlightStatus,
-      serialNumber,
     } = this.state;
 
     const screenMessage = inputPasscode || actionStatus;
@@ -210,7 +189,7 @@ export default class App extends React.Component {
             backlightStatus={backlightStatus}
           />
           <Keypad handleUpdate={this.handleKeywordUpdate} handleLock={this.setPasscode} />
-          <Serial serialNumber={serialNumber} />
+          <Serial serialNumber="12345" />
         </Panel>
       </Wrapper>
     );
