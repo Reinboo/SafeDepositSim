@@ -8,6 +8,7 @@ import Keypad from './Keypad/index';
 import setTimeout from '../timeout';
 
 import messages from '../screenMessages';
+import service from '../service.config';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -18,11 +19,11 @@ export default class App extends React.Component {
     this.setPasscode = this.setPasscode.bind(this);
 
     this.state = {
-      doorStatus: messages.top.unlocked,
       actionStatus: messages.main.ready,
+      backlightStatus: 'off',
+      doorStatus: messages.top.unlocked,
       inputPasscode: '',
       passcode: '',
-      backlightStatus: 'off',
       processInputTimeout: setTimeout(this.processInput, 1200),
       idleTimeout: setTimeout(
         () => this.setState({
@@ -72,13 +73,18 @@ export default class App extends React.Component {
       passcode,
       doorStatus,
       actionStatus,
-      serialNumber,
     } = this.state;
+
+    const {
+      serialNumber,
+      servicePasscode,
+      validateUrl,
+    } = service;
 
     if (actionStatus === messages.main.service) {
       this.setState({ actionStatus: messages.main.validating, inputPasscode: '' });
       await axios.get(
-        'https://9w4qucosgf.execute-api.eu-central-1.amazonaws.com/default/CR-JS_team_M02a',
+        validateUrl,
         { params: { code: inputPasscode } },
       ).then((response) => {
         const respSerialNumber = response.data.sn.toString();
@@ -115,7 +121,7 @@ export default class App extends React.Component {
             }),
             3000, // Simulate mechanical unlocking process
           ).refresh();
-        } else if (inputPasscode === '000000') { // Access Service Mode
+        } else if (inputPasscode === servicePasscode) { // Access Service Mode
           this.setState({
             actionStatus: messages.main.service,
             inputPasscode: '',
@@ -181,6 +187,8 @@ export default class App extends React.Component {
       backlightStatus,
     } = this.state;
 
+    const { serialNumber } = service;
+
     const screenMessage = inputPasscode || actionStatus;
 
     return (
@@ -196,7 +204,7 @@ export default class App extends React.Component {
             handleLock={this.setPasscode}
             isServiceMode={actionStatus === messages.main.service}
           />
-          <Serial serialNumber="12345" />
+          <Serial serialNumber={serialNumber} />
         </Panel>
       </Wrapper>
     );
