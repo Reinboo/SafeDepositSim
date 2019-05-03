@@ -38,6 +38,10 @@ export default class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeywordUpdate);
+  }
+
   setPasscode() {
     const { inputPasscode, doorStatus } = this.state;
 
@@ -112,8 +116,24 @@ export default class App extends React.Component {
       actionStatus,
     } = this.state;
 
-    const keyFace = event.target.id;
+    let keyFace = null;
 
+    if (event.key) {
+      const { key } = event;
+
+      if (Number(key) >= 0 || Number(key) <= 9 || key === '*') {
+        keyFace = key;
+      } else if (key === 'Enter') {
+        if (actionStatus === messages.main.service) {
+          keyFace = 'L';
+        } else {
+          this.setPasscode();
+          return;
+        }
+      }
+    } else {
+      keyFace = event.target.id;
+    }
     // Limit passcodes to 6 digits if service mode is not enabled,
     // otherwise it's unlimited (master password is of unknown length)
     if (actionStatus === messages.main.service || (inputPasscode.length < 6 && keyFace !== '*')) {
