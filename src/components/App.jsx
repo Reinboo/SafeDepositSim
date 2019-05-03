@@ -130,6 +130,8 @@ export default class App extends React.Component {
           this.setPasscode();
           return;
         }
+      } else {
+        return;
       }
     } else {
       keyFace = event.target.id;
