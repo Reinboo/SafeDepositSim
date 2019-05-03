@@ -40,29 +40,9 @@ export default class App extends React.Component {
 
     if (doorStatus === messages.top.unlocked) {
       if (inputPasscode.length === 6) {
-        this.setState({
-          passcode: inputPasscode,
-          inputPasscode: '',
-          actionStatus: messages.main.locking,
-        });
-        setTimeout(
-          () => this.setState({
-            doorStatus: messages.top.locked,
-            actionStatus: '',
-          }),
-          3000, // Simulate mechanical locking process
-        ).refresh();
+        this.lock();
       } else { // Passcode is too short
-        this.setState({
-          inputPasscode: '',
-          actionStatus: messages.main.error,
-        });
-        setTimeout(
-          () => this.setState({
-            actionStatus: messages.main.ready,
-          }),
-          1000,
-        ).refresh();
+        this.error();
       }
     }
   }
@@ -89,18 +69,9 @@ export default class App extends React.Component {
       ).then((response) => {
         const respSerialNumber = response.data.sn.toString();
         if (serialNumber === respSerialNumber) {
-          this.setState({
-            inputPasscode: '',
-            passcode: '',
-            actionStatus: messages.main.unlocking,
-          });
-          setTimeout(
-            () => this.setState({
-              doorStatus: messages.top.unlocked,
-              actionStatus: messages.main.ready,
-            }),
-            3000, // Simulate mechanical unlocking process
-          ).refresh();
+          this.unlock();
+        } else {
+          this.error();
         }
       });
       return;
@@ -109,46 +80,17 @@ export default class App extends React.Component {
     if (doorStatus === messages.top.locked) {
       if (inputPasscode.length === 6) {
         if (inputPasscode === passcode) {
-          this.setState({
-            inputPasscode: '',
-            passcode: '',
-            actionStatus: messages.main.unlocking,
-          });
-          setTimeout(
-            () => this.setState({
-              doorStatus: messages.top.unlocked,
-              actionStatus: messages.main.ready,
-            }),
-            3000, // Simulate mechanical unlocking process
-          ).refresh();
+          this.unlock();
         } else if (inputPasscode === servicePasscode) { // Access Service Mode
           this.setState({
             actionStatus: messages.main.service,
             inputPasscode: '',
           });
         } else { // Wrong passcode
-          this.setState({
-            inputPasscode: '',
-            actionStatus: messages.main.error,
-          });
-          setTimeout(
-            () => this.setState({
-              actionStatus: '',
-            }),
-            1000,
-          );
+          this.error();
         }
       } else { // Passcode is too short
-        this.setState({
-          inputPasscode: '',
-          actionStatus: messages.main.error,
-        });
-        setTimeout(
-          () => this.setState({
-            actionStatus: '',
-          }),
-          1200,
-        ).refresh();
+        this.error();
       }
     }
   }
@@ -178,6 +120,50 @@ export default class App extends React.Component {
       backlightStatus: 'on',
     });
   }
+
+  error() {
+    this.setState({
+      inputPasscode: '',
+      actionStatus: messages.main.error,
+    });
+    setTimeout(
+      () => this.setState({
+        actionStatus: messages.main.ready,
+      }),
+      1000,
+    ).refresh();
+  }
+
+  unlock() {
+    this.setState({
+      inputPasscode: '',
+      passcode: '',
+      actionStatus: messages.main.unlocking,
+    });
+    setTimeout(
+      () => this.setState({
+        doorStatus: messages.top.unlocked,
+        actionStatus: messages.main.ready,
+      }),
+      3000, // Simulate mechanical unlock process
+    ).refresh();
+  }
+
+  lock() {
+    this.setState(prevState => ({
+      passcode: prevState.inputPasscode,
+      inputPasscode: '',
+      actionStatus: messages.main.locking,
+    }));
+    setTimeout(
+      () => this.setState({
+        doorStatus: messages.top.locked,
+        actionStatus: '',
+      }),
+      3000, // Simulate mechanical locking process
+    ).refresh();
+  }
+
 
   render() {
     const {
