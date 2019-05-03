@@ -6,6 +6,7 @@ import Screen from './Screen/index';
 import Serial from './Serial';
 import Keypad from './Keypad/index';
 import setTimeout from '../timeout';
+import { digestPassword, hexString } from '../hash';
 
 import messages from '../screenMessages';
 import service from '../service.config';
@@ -24,7 +25,7 @@ export default class App extends React.Component {
       doorStatus: messages.top.unlocked,
 
       inputPasscode: '',
-      passcode: '',
+      passcodeHash: '',
 
       processInputTimeout: setTimeout(this.processInput, 1200),
       idleTimeout: setTimeout(
@@ -52,14 +53,14 @@ export default class App extends React.Component {
   async processInput() {
     const {
       inputPasscode,
-      passcode,
+      passcodeHash,
       doorStatus,
       actionStatus,
     } = this.state;
 
     const {
       serialNumber,
-      servicePasscode,
+      servicePasscodeHash,
       validateUrl,
     } = service;
 
@@ -81,16 +82,22 @@ export default class App extends React.Component {
       });
     } else if (doorStatus === messages.top.locked) {
       if (inputPasscode.length === 6) {
-        if (inputPasscode === passcode) {
-          this.unlock();
-        } else if (inputPasscode === servicePasscode) { // Access Service Mode
-          this.setState({
-            actionStatus: messages.main.service,
-            inputPasscode: '',
+        await digestPassword(inputPasscode)
+          .then((digest) => {
+            // Get hash from input
+            const hashedInput = hexString(digest);
+
+            if (hashedInput === passcodeHash) {
+              this.unlock();
+            } else if (hashedInput === servicePasscodeHash) { // Access Service Mode
+              this.setState({
+                actionStatus: messages.main.service,
+                inputPasscode: '',
+              });
+            } else { // Wrong passcodeHash
+              this.error();
+            }
           });
-        } else { // Wrong passcode
-          this.error();
-        }
       } else { // Passcode is too short
         this.error();
       }
@@ -139,7 +146,7 @@ export default class App extends React.Component {
   unlock() {
     this.setState({
       inputPasscode: '',
-      passcode: '',
+      passcodeHash: '',
       actionStatus: messages.main.unlocking,
     });
     setTimeout(
@@ -152,18 +159,23 @@ export default class App extends React.Component {
   }
 
   lock() {
-    this.setState(prevState => ({
-      passcode: prevState.inputPasscode,
-      inputPasscode: '',
-      actionStatus: messages.main.locking,
-    }));
-    setTimeout(
-      () => this.setState({
-        doorStatus: messages.top.locked,
-        actionStatus: '',
-      }),
-      3000, // Simulate mechanical locking process
-    ).refresh();
+    const { inputPasscode } = this.state;
+
+    digestPassword(inputPasscode)
+      .then((digest) => {
+        this.setState({
+          passcodeHash: hexString(digest),
+          inputPasscode: '',
+          actionStatus: messages.main.locking,
+        });
+        setTimeout(
+          () => this.setState({
+            doorStatus: messages.top.locked,
+            actionStatus: '',
+          }),
+          3000, // Simulate mechanical locking process
+        ).refresh();
+      });
   }
 
 
