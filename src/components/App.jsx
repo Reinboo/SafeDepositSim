@@ -191,7 +191,11 @@ export default class App extends React.Component {
             doorStatus={doorStatus}
             backlightStatus={backlightStatus}
           />
-          <Keypad handleUpdate={this.handleKeywordUpdate} handleLock={this.setPasscode} />
+          <Keypad
+            handleUpdate={this.handleKeywordUpdate}
+            handleLock={this.setPasscode}
+            isServiceMode={actionStatus === messages.main.service}
+          />
           <Serial serialNumber="12345" />
         </Panel>
       </Wrapper>

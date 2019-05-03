@@ -6,10 +6,11 @@ import Key from './Key';
 
 const keyFaces = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '*', '0', 'L'];
 
-const Keypad = ({ handleUpdate, handleLock }) => (
+const Keypad = ({ handleUpdate, handleLock, isServiceMode }) => (
   <Wrapper>
     {keyFaces.map((value) => {
-      if (value === 'L') {
+      // L key locks the safe, unless in service mode
+      if (value === 'L' && !isServiceMode) {
         return (
           <Key keyFace={value} handleClick={handleLock} key={value} />
         );
@@ -24,6 +25,7 @@ const Keypad = ({ handleUpdate, handleLock }) => (
 Keypad.propTypes = {
   handleUpdate: PropTypes.func.isRequired,
   handleLock: PropTypes.func.isRequired,
+  isServiceMode: PropTypes.bool.isRequired,
 };
 
 const Wrapper = styled.div`
