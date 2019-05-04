@@ -18,9 +18,7 @@ npm (6.4.1 used)
 Clone repo:
 
 ```
-
 git clone https://github.com/Reinboo/SafeDepositSim
-
 ```
 
 Inside the cloned repo folder:
