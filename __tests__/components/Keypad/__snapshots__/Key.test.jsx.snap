@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Key component Key renders correctly 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": false,
+        "rules": Array [
+          "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+          [Function],
+          ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+          [Function],
+          ";
+  color: ",
+          [Function],
+          ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+          [Function],
+          ";
+  }
+",
+        ],
+      },
+      "displayName": "styled.button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "button",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+  id="1"
+  onClick={[MockFunction]}
+  type="button"
+>
+  1
+</StyledComponent>
+`;
