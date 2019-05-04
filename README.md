@@ -1,6 +1,6 @@
 # SafeDepositSim
 
-Hotel safe deposit box simulation
+Hotel safe deposit box simulation. You can check out the live version at https://nivalisdev.me/SafeDepositSim
 
 ## Getting Started
 
