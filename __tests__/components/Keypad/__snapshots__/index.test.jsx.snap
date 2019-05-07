@@ -1,0 +1,984 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keypad component renders correctly 1`] = `
+<Keypad
+  handleLock={[MockFunction]}
+  handleUpdate={[MockFunction]}
+  isServiceMode={false}
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bwzfXH",
+            "isStatic": true,
+            "lastClassName": "ggxcE",
+            "rules": Array [
+              "
+  margin: 1rem 0;
+
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bwzfXH",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="sc-bwzfXH ggxcE"
+      >
+        <Key
+          handleClick={[MockFunction]}
+          key="7"
+          keyFace="7"
+        >
+          <styled.button
+            id="7"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="7"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="7"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                7
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="8"
+          keyFace="8"
+        >
+          <styled.button
+            id="8"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="8"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="8"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                8
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="9"
+          keyFace="9"
+        >
+          <styled.button
+            id="9"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="9"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="9"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                9
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="4"
+          keyFace="4"
+        >
+          <styled.button
+            id="4"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="4"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="4"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                4
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="5"
+          keyFace="5"
+        >
+          <styled.button
+            id="5"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="5"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="5"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                5
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="6"
+          keyFace="6"
+        >
+          <styled.button
+            id="6"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="6"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="6"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                6
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="1"
+          keyFace="1"
+        >
+          <styled.button
+            id="1"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="1"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="1"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                1
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="2"
+          keyFace="2"
+        >
+          <styled.button
+            id="2"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="2"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="2"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                2
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="3"
+          keyFace="3"
+        >
+          <styled.button
+            id="3"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="3"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="3"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                3
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="*"
+          keyFace="*"
+        >
+          <styled.button
+            id="*"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="*"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="*"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                *
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="0"
+          keyFace="0"
+        >
+          <styled.button
+            id="0"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="0"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="0"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                0
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+        <Key
+          handleClick={[MockFunction]}
+          key="L"
+          keyFace="L"
+        >
+          <styled.button
+            id="L"
+            onClick={[MockFunction]}
+            type="button"
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "cponZC",
+                    "rules": Array [
+                      "
+  width: 4rem; height: 4rem;
+  margin: .5rem;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ",
+                      [Function],
+                      ";
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+  cursor: pointer;
+  font: 2.5rem ",
+                      [Function],
+                      ";
+  color: ",
+                      [Function],
+                      ";
+  
+  transition: background-color .2s linear;
+  
+  &:hover {
+    background-color: ",
+                      [Function],
+                      ";
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              id="L"
+              onClick={[MockFunction]}
+              type="button"
+            >
+              <button
+                className="sc-bdVaJa cponZC"
+                id="L"
+                onClick={[MockFunction]}
+                type="button"
+              >
+                L
+              </button>
+            </StyledComponent>
+          </styled.button>
+        </Key>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Keypad>
+`;

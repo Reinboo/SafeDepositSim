@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Key component Key renders correctly 1`] = `
+exports[`Key component renders correctly 1`] = `
 <StyledComponent
   forwardedComponent={
     Object {
